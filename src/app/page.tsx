@@ -1,3 +1,9 @@
+"use client";
+import A from "#/A";
 export default function Home() {
-  return <main>INDEX</main>;
+  return (
+    <main>
+      <A />
+    </main>
+  );
 }
