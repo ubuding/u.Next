@@ -1,21 +1,21 @@
-"use client";
+'use client';
 import {
-  TextInput,
-  Checkbox,
-  Button,
-  Group,
   Box,
-  SegmentedControl,
+  Button,
   Center,
+  Checkbox,
+  Group,
+  SegmentedControl,
+  TextInput,
   rem,
-} from "@mantine/core";
-import { IconEye, IconCode, IconExternalLink } from "@tabler/icons-react";
-import { useForm } from "@mantine/form";
-import { useState } from "react";
-export default function register() {
+} from '@mantine/core';
+import { useForm } from '@mantine/form';
+import { IconCode, IconExternalLink, IconEye } from '@tabler/icons-react';
+import { useState } from 'react';
+export default function Register() {
   const ControlData = [
     {
-      value: "0",
+      value: '0',
       label: (
         <Center style={{ gap: 10 }}>
           <IconEye style={{ width: rem(16), height: rem(16) }} />
@@ -24,7 +24,7 @@ export default function register() {
       ),
     },
     {
-      value: "1",
+      value: '1',
       label: (
         <Center style={{ gap: 10 }}>
           <IconCode style={{ width: rem(16), height: rem(16) }} />
@@ -33,7 +33,7 @@ export default function register() {
       ),
     },
     {
-      value: "2",
+      value: '2',
       label: (
         <Center style={{ gap: 10 }}>
           <IconExternalLink style={{ width: rem(16), height: rem(16) }} />
@@ -43,15 +43,15 @@ export default function register() {
     },
   ];
 
-  const [type, setType] = useState("0");
+  const [type, setType] = useState('0');
   const form = useForm({
-    mode: "uncontrolled",
+    mode: 'uncontrolled',
     initialValues: {
-      email: "",
+      email: '',
       termsOfService: false,
     },
     validate: {
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
     },
   });
 
@@ -67,23 +67,23 @@ export default function register() {
         }}
       />
       <form onSubmit={form.onSubmit((values) => console.log(values))}>
-        {type == "0" ? (
+        {type == '0' ? (
           <TextInput
             withAsterisk
             label="Account"
             placeholder="Please enter your account"
-            key={form.key("email")}
-            {...form.getInputProps("email")}
+            key={form.key('email')}
+            {...form.getInputProps('email')}
           />
         ) : (
-          ""
+          ''
         )}
 
         <Checkbox
           mt="md"
           label="I agree to sell my privacy"
-          key={form.key("termsOfService")}
-          {...form.getInputProps("termsOfService", { type: "checkbox" })}
+          key={form.key('termsOfService')}
+          {...form.getInputProps('termsOfService', { type: 'checkbox' })}
         />
 
         <Group justify="flex-end" mt="md">
