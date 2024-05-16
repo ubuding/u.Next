@@ -1,15 +1,33 @@
-.navbar-component {
+.component.navbar-component {
   display: flex;
-  flex-direction: row;
-  height: 64px;
-  .logo {
-  }
-  .tools {
-    .user {
+  flex-direction: column;
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    height: 64px;
+    // background-color: #000;
+    margin-bottom: 12px;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    align-items: center;
+    .logo {
+      width: 64px;
+      height: 64px;
+      background: url("./images/logo.png");
+      background-size: cover;
     }
-    .git {
-    }
-    .theme {
+    .tools {
+      display: flex;
+      flex-direction: row;
+      .item {
+        margin-left: 12px;
+        &.user {
+        }
+        &.git {
+        }
+        &.theme {
+        }
+      }
     }
   }
 }
