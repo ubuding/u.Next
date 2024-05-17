@@ -1,6 +1,10 @@
 import "./style.scss";
-import { SimpleGrid, Stack } from "@mantine/core";
-import { useViewportSize } from "@mantine/hooks";
+import { SimpleGrid, Stack, Text } from "@mantine/core";
+import {
+  useViewportSize,
+  useWindowScroll,
+  useScrollIntoView,
+} from "@mantine/hooks";
 import { useEffect, useMemo, useState } from "react";
 import { Image } from "#/Image";
 const ImageW = 250;

@@ -29,8 +29,8 @@ const imageH = new Map([
 export const getImages = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(
-        Array(50)
+      resolve({
+        list: Array(50)
           .fill(1)
           .map(() => {
             const id = getRandom(1, 20);
@@ -38,8 +38,9 @@ export const getImages = () => {
               src: "/images/" + id + ".jpg",
               height: imageH.get(id),
             };
-          })
-      );
+          }),
+        hasData: true,
+      });
     }, 2000);
   });
 };

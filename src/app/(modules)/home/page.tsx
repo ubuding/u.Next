@@ -1,21 +1,30 @@
 "use client";
 import { getImages } from "@/images";
-import { useEffect, useState } from "react";
+import { useRef } from "react";
 import Hot from "#/Hot";
 import Waterfall from "#/Waterfall";
 import "./style.scss";
+import { useInfiniteScroll } from "ahooks";
 export default function Home() {
-  const [list, setList] = useState<number[]>([]);
-  useEffect(() => {
-    getImages().then((data: any) => {
-      setList(data);
-    });
-  }, []);
+  const ref = useRef<HTMLDivElement>(null);
+  const { data, loading, loadMore, loadingMore, noMore } = useInfiniteScroll(
+    (_) => {
+      console.log(_, ">>>");
+      return getImages();
+    },
+    {
+      target: ref,
+      isNoMore: (_: any) => {
+        console.log(_, "isNoMore >>>");
+        return !_?.hasData;
+      },
+    }
+  );
   return (
-    <div className="module home-module">
+    <div ref={ref} className="module home-module">
       <Hot />
       <h2>Images</h2>
-      <Waterfall data={list} />
+      {loading ? "" : <Waterfall data={data.list} />}
     </div>
   );
 }

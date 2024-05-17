@@ -3,14 +3,12 @@
   flex-direction: column;
   padding: 0 32px;
   box-sizing: border-box;
+  background-color: #000;
   .navbar {
     display: flex;
     flex-direction: row;
     height: 64px;
-    // background-color: #000;
-    margin-bottom: 12px;
     justify-content: space-between;
-    border-bottom: 1px solid #fff;
     align-items: center;
     .logo {
       width: 64px;
