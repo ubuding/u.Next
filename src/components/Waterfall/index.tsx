@@ -26,7 +26,7 @@ export default function Waterfall({ data = [] }: { data: DataItem[] }) {
   const group = useMemo(() => {
     if (width && cols && data.length) {
       let row: DataItem[][] = [];
-      let h = [];
+      let h: Array<number> = [];
       for (let index = 0; index < cols; index++) {
         row.push([]);
         h.push(0);
@@ -45,6 +45,7 @@ export default function Waterfall({ data = [] }: { data: DataItem[] }) {
         }
 
         row[index].push(item);
+        h[index] = (h?.at(index) || 0) + item.height;
         index++;
       });
       return row;
