@@ -3,6 +3,7 @@ import { getImages } from "@/images";
 import { useEffect, useState } from "react";
 import Hot from "#/Hot";
 import Waterfall from "#/Waterfall";
+import "./style.scss";
 export default function Home() {
   const [list, setList] = useState<number[]>([]);
   useEffect(() => {
@@ -11,10 +12,10 @@ export default function Home() {
     });
   }, []);
   return (
-    <div className="home-module">
+    <div className="module home-module">
       <Hot />
       <h2>Images</h2>
-      <Waterfall />
+      <Waterfall data={list} />
     </div>
   );
 }

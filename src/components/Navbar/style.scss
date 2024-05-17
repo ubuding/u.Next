@@ -1,6 +1,8 @@
 .component.navbar-component {
   display: flex;
   flex-direction: column;
+  padding: 0 32px;
+  box-sizing: border-box;
   .navbar {
     display: flex;
     flex-direction: row;

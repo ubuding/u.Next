@@ -5,8 +5,33 @@ body {
 }
 
 body {
-  padding: 0 32px;
   box-sizing: border-box;
   overflow: hidden;
   background-color: #232323;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #000;
+  border-radius: 10px;
 }

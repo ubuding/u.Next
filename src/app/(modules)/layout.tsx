@@ -1,13 +1,14 @@
 import Navbar from "#/Navbar";
+import "./layout.scss";
 export default function ModulesLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <div className="module-layout">
+    <div className="layout module-layout">
       <Navbar />
-      {children}
+      <div className="module-wrap">{children}</div>
     </div>
   );
 }
