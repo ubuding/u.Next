@@ -6,8 +6,10 @@ body {
 
 body {
   box-sizing: border-box;
-  // overflow: hidden;
-  background-color: #232323;
+  overflow: hidden;
+  // background-color: #232323;
+  font-family: "Microsoft Yahei", "PingFang SC", "San Francisco", "Heiti SC",
+    "Helvetica" !important;
 }
 
 ::-webkit-scrollbar {

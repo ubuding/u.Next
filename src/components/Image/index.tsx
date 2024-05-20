@@ -1,36 +1,41 @@
 import "./style.scss";
 import NextImage from "next/image";
 import { Image as MantineImage } from "@mantine/core";
-import type { MantineImageProps, NextImageProps } from "./Image";
+import type { MantineImageProps, NextImageProps } from "./type";
+import { useMemo } from "react";
 export const Image = (props: MantineImageProps) => {
-  const { src, alt = "", h = "auto", w = "auto" } = props;
+  const {
+    src,
+    alt = "",
+    height = "auto",
+    width = "250px",
+    className = "",
+  } = props;
   return (
     <div
-      className="component image-component"
-      style={{ height: h, width: "250px" }}
+      className={"component image-component " + className}
+      style={{ height, width }}
     >
       <MantineImage
-        // src={src}
-        // alt={alt}
         component={() =>
           NImage({
             src,
             alt,
-            // width: w == "auto" ? 600 : w,
-            // height: h == "auto" ? 600 : h,
           })
         }
-        // radius="md"
       />
     </div>
   );
 };
 
-function NImage(props: NextImageProps) {
-  const _props = Object.assign(props, {
-    fill: true,
-    // objectFit: "contain",
-    objectFit: "cover",
-  });
-  return <NextImage {..._props} />;
+function NImage(_: NextImageProps) {
+  const props = useMemo(
+    () =>
+      Object.assign(_, {
+        fill: true,
+        objectFit: "cover",
+      }),
+    [_]
+  );
+  return <NextImage {...props} />;
 }

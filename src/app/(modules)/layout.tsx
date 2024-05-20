@@ -1,14 +1,8 @@
-import Navbar from "#/Navbar";
-import "./layout.scss";
-export default function ModulesLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <div className="layout module-layout">
-      <Navbar />
-      <div className="module-wrap">{children}</div>
-    </div>
-  );
+import ModulesLayoutIndex from "#/Layout/ModulesLayout";
+export default function ModulesLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+  }>
+) {
+  return <ModulesLayoutIndex {...props} />;
 }

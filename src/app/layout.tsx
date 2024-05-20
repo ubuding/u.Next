@@ -3,13 +3,14 @@ import { Inter } from "next/font/google";
 import { createTheme, MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 import { NavigationProgress } from "@mantine/nprogress";
-import { useTheme } from "~/useTheme";
-import "src/style/root.scss";
+import { useTheme } from "~/hooks/useTheme";
+
+import "~/style/root.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ubuding",
-  description: "ubuding next",
+  title: "永远少年",
+  description: "ubuding github",
 };
 export default function RootLayout({
   children,
