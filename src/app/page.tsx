@@ -1,4 +1,4 @@
-"use client";
-export default function Home() {
-  return <main></main>;
+import IndexIndex from "@/index/pages/index";
+export default function Index() {
+  return <IndexIndex />;
 }

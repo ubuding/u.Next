@@ -1,0 +1,39 @@
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  box-sizing: border-box;
+  overflow: hidden;
+  // background-color: #232323;
+  font-family: "Microsoft Yahei", "PingFang SC", "San Francisco", "Heiti SC",
+    "Helvetica" !important;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #000;
+  border-radius: 10px;
+}

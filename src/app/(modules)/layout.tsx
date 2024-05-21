@@ -1,4 +1,5 @@
-import ModulesLayoutIndex from "#/Layout/ModulesLayout";
+import ModulesLayoutIndex from "$/layout/ModulesLayout";
+
 export default function ModulesLayout(
   props: Readonly<{
     children: React.ReactNode;
