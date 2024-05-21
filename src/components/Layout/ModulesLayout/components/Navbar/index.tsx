@@ -1,6 +1,6 @@
 import "./style.scss";
-import { ActionIcon, Divider } from "@mantine/core";
-import { IconBrandGithub, IconSun, IconMoon } from "@tabler/icons-react";
+import { ActionIcon, Avatar, Popover, Button } from "@mantine/core";
+import { IconBrandGithub, IconSun, IconLogout } from "@tabler/icons-react";
 
 export default function Navbar() {
   return (
@@ -13,6 +13,7 @@ export default function Navbar() {
 
         <div className="tools">
           <div className="user item"></div>
+
           <div className="git item">
             <ActionIcon
               size="xl"
@@ -30,6 +31,19 @@ export default function Navbar() {
             >
               <IconSun />
             </ActionIcon>
+          </div>
+
+          <div className="avatar item">
+            <Popover width={200} position="bottom" withArrow shadow="md">
+              <Popover.Target>
+                <Avatar src="avatar.png" alt="it's me" />
+              </Popover.Target>
+              <Popover.Dropdown>
+                <Button>
+                  <IconLogout /> Logout
+                </Button>
+              </Popover.Dropdown>
+            </Popover>
           </div>
         </div>
       </div>
