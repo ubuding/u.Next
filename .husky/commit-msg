@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> commitlint"
+echo "commitlint start >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 npx --no-install commitlint --edit "$1"
+echo "commitlint over  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
