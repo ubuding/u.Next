@@ -1,8 +1,7 @@
-import "./style.scss";
 import NextImage from "next/image";
 import { Image as MantineImage } from "@mantine/core";
 import type { MantineImageProps, NextImageProps } from "./type";
-import { useMemo } from "react";
+import "./style.scss";
 export const Image = (props: MantineImageProps) => {
   const {
     src,
@@ -28,14 +27,6 @@ export const Image = (props: MantineImageProps) => {
   );
 };
 
-function NImage(_: NextImageProps) {
-  const props = useMemo(
-    () =>
-      Object.assign(_, {
-        fill: true,
-        objectFit: "cover",
-      }),
-    [_]
-  );
-  return <NextImage {...props} />;
+function NImage({ src, alt = "" }: NextImageProps) {
+  return <NextImage src={src} alt={alt} fill={true} objectFit="cover" />;
 }
