@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> lint-staged"
+echo "lint-staged start >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 npx --no-install lint-staged
+echo "lint-staged over  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
