@@ -38,14 +38,7 @@ export default function RootLayout({
       </Head>
       <body className={inter.className}>
         <MantineProvider theme={theme}>
-          <Notifications
-            position="top-right"
-            styles={{
-              notification: {
-                backgroundColor: "#000",
-              },
-            }}
-          />
+          <Notifications position="top-right" />
           <NavigationProgress />
           {children}
         </MantineProvider>

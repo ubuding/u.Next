@@ -1,4 +1,6 @@
 import axios from "axios";
+import type { AxiosResponse } from "axios";
+import { notifications } from "@mantine/notifications";
 const instance = axios.create({
   baseURL: "/",
   timeout: 60000,
@@ -10,7 +12,11 @@ instance.interceptors.request.use(
     return config;
   },
   function (error) {
-    // message.error("请求错误!");
+    notifications.show({
+      color: "red",
+      title: "request error",
+      message: "请求错误",
+    });
     return Promise.reject(error);
   }
 );
@@ -24,12 +30,20 @@ instance.interceptors.response.use(
     const { status } = response;
     if (status === 200) return data;
 
-    // message.error("请求错误!");
+    notifications.show({
+      color: "red",
+      title: "request error",
+      message: "请求错误",
+    });
     console.error(response);
     return Promise.reject(new Error("请求失败!"));
   },
   function (error) {
-    // message.error("响应失败!");
+    notifications.show({
+      color: "red",
+      title: "request error",
+      message: "响应失败",
+    });
     return Promise.reject(error);
   }
 );

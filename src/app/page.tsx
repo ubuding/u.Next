@@ -1,4 +1,4 @@
-import IndexIndex from "@/index/pages/index";
+import RootIndex from "@/root/pages/index";
 export default function Index() {
-  return <IndexIndex />;
+  return <RootIndex />;
 }
