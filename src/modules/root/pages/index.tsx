@@ -16,7 +16,7 @@ import { getInfo } from "@/root/service";
 import { useRootStore } from "@/root/store";
 export default function Index() {
   const changeLanguage = (lng: "zh" | "en") => {
-    // i18n.changeLanguage(lng);
+    i18n.changeLanguage(lng);
   };
 
   const { setColorScheme, clearColorScheme } = useMantineColorScheme();
